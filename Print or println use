@@ -1,0 +1,11 @@
+public class Address {
+    public static void main(String[] args) {
+        // i) Using single print
+        System.out.print("Abhijit, ARS Residency, Greater Noida\n");
+
+        // ii) Using multiple println
+        System.out.println("Abhijit");
+        System.out.println("ARS Residency");
+        System.out.println("Greater Noida");
+    }
+}
