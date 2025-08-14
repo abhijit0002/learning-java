@@ -1,0 +1,25 @@
+public class NumberRelation {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 8;
+        int c = 6;
+
+        if (a != b && b != c && a != c) { 
+            if (a < b && b < c) {
+                System.out.println("Strictly Increasing");
+            } 
+            else if (a > b && b > c) {
+                System.out.println("Strictly Decreasing");
+            } 
+            else if (b > a && b > c) {
+                System.out.println("Middle number is largest");
+            } 
+            else {
+                System.out.println("No specific pattern");
+            }
+        }
+else {
+            System.out.println("Numbers are not all different");
+        }
+    }
+}
