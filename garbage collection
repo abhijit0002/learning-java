@@ -1,0 +1,25 @@
+public class SimpleGC {
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Garbage collected!");
+        super.finalize();
+    }
+
+    public static void main(String[] args) {
+        SimpleGC obj1 = new SimpleGC();
+        SimpleGC obj2 = new SimpleGC();
+
+        obj1 = null;  // obj1 is now eligible for garbage collection
+        obj2 = null;  // obj2 is also now eligible
+
+        System.out.println("Requesting garbage collection...");
+        System.gc();  // Suggest the JVM run garbage collection
+
+        // Wait a bit to give GC a chance to run finalize()
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ignored) {}
+
+        System.out.println("End of main.");
+    }
+}
